@@ -1,52 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VxaseCzx File Hub</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VXASE SHOP</title>
+
+  <!-- Fonts: Orbitron (tech), Bungee Shade (neon weight), Audiowide (curved) -->
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Shade&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-glow"></div>
+  <div id="lava-bg" aria-hidden="true">
+    <!-- Lava blobs (generated & animated by CSS + JS) -->
+    <div class="blob" style="--b-size:420px; --b-left:10%; --b-top:5%; --b-color: #8b39ff33;"></div>
+    <div class="blob" style="--b-size:360px; --b-left:65%; --b-top:10%; --b-color: #6f1aff33;"></div>
+    <div class="blob" style="--b-size:520px; --b-left:30%; --b-top:55%; --b-color: #c07bff22;"></div>
+    <div class="blob" style="--b-size:300px; --b-left:80%; --b-top:55%; --b-color: #9a5dff22;"></div>
+  </div>
 
-  <!-- Floating Settings Button -->
-  <div class="settings-btn" title="Settings">⚙️</div>
+  <!-- Floating thin settings (no menu) -->
+  <button class="settings-floating" aria-label="Settings">⚙️</button>
 
-  <header>
-    <h1>Vxaseczx <span>File Hub</span></h1>
-    <p>Upload • Share • Access your files easily</p>
+  <header class="header">
+    <h1 class="title">
+      <span class="title-tech">VXASE</span>
+      <span class="title-neon">SHOP</span>
+    </h1>
+
+    <div class="neon-divider" aria-hidden="true">
+      <span class="neon-line"></span>
+      <span class="neon-gap">·</span>
+      <span class="neon-line"></span>
+    </div>
+
+    <p class="tagline">Files • Tools • Injectors — click to access</p>
   </header>
 
-  <main>
-    <section class="file-section">
-      <h2>Available Files</h2>
-      <div class="file-grid">
-        <div class="file-card">
-          <div class="icon">📁</div>
-          <p>Coming Soon...</p>
+  <main class="container">
+    <!-- Animated tiles -->
+    <section class="menu-tiles" aria-label="File categories">
+      <a class="tile" id="tile-panel" href="#" role="button">
+        <div class="tile-ico" aria-hidden="true">
+          <!-- stylized vector -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M8 8h8M8 12h8M8 16h5" />
+          </svg>
         </div>
-        <div class="file-card">
-          <div class="icon">📂</div>
-          <p>Placeholder File</p>
+        <div class="tile-text">
+          <h3>Panel</h3>
+          <p>Control panels & dashboards</p>
         </div>
-        <div class="file-card">
-          <div class="icon">💾</div>
-          <p>Upload Area</p>
+      </a>
+
+      <a class="tile" id="tile-script" href="#" role="button">
+        <div class="tile-ico" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 18l6-6-6-6" />
+            <path d="M8 6v12" />
+          </svg>
         </div>
-      </div>
+        <div class="tile-text">
+          <h3>Script</h3>
+          <p>Automation & scripts</p>
+        </div>
+      </a>
+
+      <a class="tile" id="tile-injector" href="#" role="button">
+        <div class="tile-ico" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12h7" />
+            <path d="M15 12h7" />
+            <path d="M11 5v14" />
+            <circle cx="11" cy="5" r="1" />
+          </svg>
+        </div>
+        <div class="tile-text">
+          <h3>Injector</h3>
+          <p>Injectors & modules</p>
+        </div>
+      </a>
     </section>
 
-    <!-- Floating Weapons Section -->
-    <section class="weapons-area">
-      <div class="weapon" style="animation-delay: 0s;">🔫</div>
-      <div class="weapon" style="animation-delay: 1s;">🗡️</div>
-      <div class="weapon" style="animation-delay: 2s;">💣</div>
-    </section>
+    <!-- Floating weapons area (stylized neon silhouettes) -->
+    <div id="weapons-layer" aria-hidden="true">
+      <!-- weapon elements (SVG shapes) -->
+      <div class="weapon" data-name="rifle" role="img" aria-label="weapon-rifle">
+        <!-- stylized energy rifle -->
+        <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#b78dff" stop-opacity="1"/>
+              <stop offset="1" stop-color="#6f1aff" stop-opacity="1"/>
+            </linearGradient>
+          </defs>
+          <g stroke="url(#g1)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 32 L70 24 L95 18 L116 22 L150 24 L186 22" />
+            <rect x="20" y="26" width="40" height="10" rx="3" />
+            <path d="M110 28 L130 16 L150 24" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="weapon" data-name="blade" role="img" aria-label="weapon-blade">
+        <!-- stylized energy blade -->
+        <svg viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="g2" x1="0" x2="1">
+              <stop offset="0" stop-color="#e0b8ff"/>
+              <stop offset="1" stop-color="#7a39ff"/>
+            </linearGradient>
+          </defs>
+          <g stroke="url(#g2)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M40 4 L28 40 L36 112 L44 40 Z" />
+            <line x1="40" y1="10" x2="40" y2="60" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="weapon" data-name="grenade" role="img" aria-label="weapon-grenade">
+        <!-- stylized energy grenade -->
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <radialGradient id="g3" cx="0.5" cy="0.3">
+              <stop offset="0" stop-color="#ffd7ff"/>
+              <stop offset="1" stop-color="#a25dff"/>
+            </radialGradient>
+          </defs>
+          <g stroke="url(#g3)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="40" cy="42" r="18" />
+            <path d="M36 22 L36 14 L44 14 L44 22" />
+            <line x1="28" y1="34" x2="52" y2="34" />
+          </g>
+        </svg>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 VxaseCzx | </p>
+  <footer class="footer">
+    <div class="contacts">
+      <a class="contact wa" href="https://wa.me/213793852928" target="_blank" rel="noopener noreferrer">
+        WhatsApp: +213 793 852 928
+      </a>
+      <a class="contact tg" href="https://t.me/+nsTubGtjk2I0MDY0" target="_blank" rel="noopener noreferrer">
+        Join channel
+      </a>
+    </div>
+    <div class="copyright">© 2025 VXASE SHOP</div>
   </footer>
+
+  <!-- Script: randomize weapon positions & subtle blob movement timing -->
+  <script>
+    // Randomize weapon positions and speeds on load
+    (function() {
+      const weapons = Array.from(document.querySelectorAll('#weapons-layer .weapon'));
+      const layer = document.getElementById('weapons-layer');
+
+      // ensure layer fills viewport for placement
+      layer.style.width = '100%';
+      layer.style.height = '60vh';
+
+      weapons.forEach((w, i) => {
+        // randomize left within 5%..90%
+        const left = Math.floor(Math.random() * 85) + 5;
+        // random vertical offset base (so they appear across area)
+        const top = Math.floor(Math.random() * 60) + 5;
+        // random float duration
+        const dur = (Math.random() * 3) + 3; // 3s..6s
+        // random horizontal tiny drift
+        const drift = (Math.random() * 40) - 20; // -20..20 px
+
+        w.style.left = left + '%';
+        w.style.top = top + '%';
+        w.style.setProperty('--float-dur', dur + 's');
+        w.style.setProperty('--drift', drift + 'px');
+
+        // slight rotation for variety
+        const rot = (Math.random() * 20) - 10;
+        w.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
+      });
+
+      // gently randomize blob animation durations
+      const blobs = Array.from(document.querySelectorAll('#lava-bg .blob'));
+      blobs.forEach(b => {
+        const dur = 10 + Math.random() * 10;
+        b.style.animationDuration = dur + 's';
+        b.style.opacity = 0.6 + Math.random() * 0.3;
+      });
+
+      // Tile click placeholders (you will attach file pages later)
+      document.querySelectorAll('.tile').forEach(t => {
+        t.addEventListener('click', e => {
+          e.preventDefault();
+          const txt = t.querySelector('h3').innerText || 'Item';
+          // Temporary feedback — later you can point to real pages/files
+          const toast = document.createElement('div');
+          toast.className = 'toast';
+          toast.textContent = `${txt} clicked — files will be available here soon`;
+          document.body.appendChild(toast);
+          setTimeout(() => toast.classList.add('visible'), 10);
+          setTimeout(() => toast.classList.remove('visible'), 2200);
+          setTimeout(() => toast.remove(), 2500);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
