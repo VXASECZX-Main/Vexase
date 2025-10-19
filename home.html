@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Futur — Home</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container bar-inner">
+      <a class="brand" href="home.html">FUTUR</a>
+      <div class="bar-actions">
+        <span id="greeting" class="muted"></span>
+        <button id="logoutBtn" class="btn ghost" style="display:none">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <section class="compose card" aria-labelledby="composeTitle">
+      <h2 id="composeTitle">Create post</h2>
+      <form id="postForm" class="form">
+        <label><span>What’s happening?</span><textarea name="text" rows="3" required></textarea></label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Post</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="feed card" aria-live="polite">
+      <h2>Feed</h2>
+      <div id="posts" class="posts-list"></div>
+      <div id="noPosts" class="muted">No posts yet — be the first!</div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div>© <span id="year"></span> FUTUR — Static demo</div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

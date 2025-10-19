@@ -3,31 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Futur — Login</title>
+  <title>Futur — Sign up</title>
   <link rel="icon" href="assets/favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="page-auth">
   <main class="auth-card" role="main">
     <a class="brand" href="home.html">FUTUR</a>
-    <h1>Welcome back</h1>
-    <p class="muted">Sign in to continue — this demo is static and stores data locally in your browser.</p>
+    <h1>Create account</h1>
+    <p class="muted">This stores a local user in your browser (for demo purposes).</p>
 
-    <form id="loginForm" class="form">
+    <form id="signupForm" class="form">
+      <label><span>Full name</span><input required type="text" name="name" /></label>
       <label><span>Email</span><input required type="email" name="email" /></label>
-      <label><span>Password</span><input required type="password" name="password" /></label>
+      <label><span>Password</span><input required type="password" name="password" minlength="6" /></label>
       <div class="form-actions">
-        <button class="btn primary" type="submit">Sign in</button>
+        <button class="btn primary" type="submit">Create account</button>
       </div>
     </form>
 
     <div class="sep">or</div>
     <div class="row">
-      <a href="signup.html" class="btn ghost">Create account</a>
+      <a href="index.html" class="btn ghost">Back to login</a>
       <a href="home.html" class="btn lite">Continue as guest</a>
     </div>
 
-    <footer class="auth-foot">This is a frontend demo — no server. Data is saved in <code>localStorage</code>.</footer>
+    <footer class="auth-foot">Passwords are stored in plain text in this demo (don't use real passwords).</footer>
   </main>
 
   <script src="js/main.js" defer></script>
